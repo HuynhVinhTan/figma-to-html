@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+/* 1 rem = 16pixel -> chuyển đổi sao cho chẳng hệ số để tính toán đở phải phức tạp */
+html {
+  font-size: 62.5%;
+} /* sau khi thay đổi thế này thì ta đã chuyển đổi được 1 rem = 10pixel */
+
+/* khôi phục lại cở chữ mặc định theo rem */
+body {
+  font-size: 1.6rem;
+  /* giờ tương tự dễ tính hơn thì chữ đã được 16 pixel */
+}
