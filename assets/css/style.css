@@ -11,4 +11,95 @@ html {
 body {
   font-size: 1.6rem;
   /* giờ tương tự dễ tính hơn thì chữ đã được 16 pixel */
+  font-family: "Sen", sans-serif;
+}
+
+/* =================common================= */
+a {
+  text-decoration: none;
+}
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 48px); /*tránh việc sử dụng thanh kéo khi co trang*/
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  /* thẻ a mặc định là thẻ định dạng inline*/
+  display: inline-block; /* linh hoạt về chuyển đổi định dạng từ inline sang block*/
+  min-width: 118px; /* tối thiểu rộng */
+  padding: 0px 16px;
+  line-height: 50px; /* chỉnh chữ */
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 24.5px;
+  background: #171100;
+}
+/* =================/common================= */
+
+/* =================header================= */
+
+.header {
+  background: #fffcf4;
+}
+.header.fixed {
+  position: sticky;
+  top: -28px;
+}
+
+.header .body {
+  /* chỉ rỏ đây là phần chỉ dùng cho (class) body trong phần header, các phần khác k dùng được*/
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px; /* kéo giãn các phần tử con bên trong body */
+}
+
+.nav ul {
+  /* chỉ rỏ đây là phần ul(con) trong nav(cha), lưu ý các phần với nhau sẽ không dùng dấu chấm */
+  display: flex;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav a {
+  /* chỉ tác động tới phần a(con) trong phần nav(cha) */
+  color: #5f5b53;
+  font-size: 1.6rem; /* 16 px bằng 1.6 rem*/
+  padding: 8px 21px; /*độ rộng của 1 block được bung ra trên dưới mỗi nơi tổng 8px, mỗi bên 21px*/
+  /* dùng padding các phần tử bên trong sẽ được co giãn */
+
+  position: relative; /* định vị tổ tiên */
+}
+
+.nav li.active a::after {
+  position: absolute; /* định vị con cháu để xác định theo định vị tổ tiên*/
+  left: 21px;
+  bottom: 6px;
+  display: block;
+  content: "";
+  width: 12px;
+  height: 2px;
+  flex-shrink: 0;
+  border-radius: 1px;
+  background: #171100;
+}
+
+.header .btn-sign-up {
+  min-width: 144px;
+}
+
+/* dạng áp dụng đồng thời */
+.nav li.active a,
+.nav a:hover {
+  /* hiệu ứng khi hover(đưa chuột vào) thay đổi */
+  color: #171100;
+  text-shadow: 1px 0 0 currentColor; /* ngang đứng màu nhòe */
+}
+
+.header .action {
+  margin-left: 49px;
 }
